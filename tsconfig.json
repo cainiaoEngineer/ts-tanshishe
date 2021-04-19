@@ -1,0 +1,48 @@
+{
+  //tsconfig.json是ts编译器的配置文件，ts编译器可以根据它的信息对代码进行编译
+  //include用来指定哪些ts文件需要编译
+  //exclude:不需要被编译的文件目录
+    //**表示任意目录，*表示任意文件
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "./src/hello/**/*"
+  ],
+  //compilerOptions 编译器的选项
+  "compilerOptions": {
+    // target 用来指定ts被编译的js的版本 es3', 'es5', 'es6', 'es2015', 'es2016', 'es2017', 'es2018', 'es2019', 'es2020', 'esnext'
+    //ts的语法转换是不够的，还需要babel结合webpack做转换，以使代码有更好的兼容性
+    "target": "es2015",
+    //module 指定要使用的模块化的规范
+    "module": "es2015",
+    //lib 用来指定项目中要使用的库,ts会根据这些库来检查代码和给出相应的提示,一般情况下不需要设置
+    // "lib": [],
+    //outDir 用来指定编译后的文件所在的目录
+    "outDir": "./dist",
+    //outFile 用来将代码合并成一个文件
+    //设置outFile后，所有的全局作用域中的代码会合并到同一个文件，这种事情一般都会交给打包工具来做
+    // "outFile": "./dist/app.js",
+    //是否对js文件编译，默认为false
+    "allowJs": false,
+    //是否检查js代码是否符合语法规范，默认false
+    "checkJs": false,
+    //是否移除注释
+    "removeComments": false,
+    //不生成编译后的文件
+    "noEmit": false,
+    //当有错误时不生成编译后的文件
+    "noEmitOnError": true,
+    //所有严格检查的总开关，开发建议设为true
+    "strict": true,
+    //用来设置编译后的文件是否使用严格模式，当js中有模块导入导出语句的时候，默认是严格模式
+    "alwaysStrict": false,
+    //Implicit:隐式的， 不允许隐式的any类型
+    "noImplicitAny": false,
+    //不允许不明确类型的this
+    "noImplicitThis": false,
+    //严格的检查空值
+    "strictNullChecks": false,
+    
+  }
+}   
